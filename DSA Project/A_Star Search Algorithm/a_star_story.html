@@ -1,0 +1,238 @@
+<html>
+<head>
+	<title>Mobile</title>
+</head>
+<style>
+#zoom 
+{
+  transition: transform 0.75s;
+}
+
+#zoom:hover 
+{
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.2); 
+}
+#mob_popup
+{
+	border:4px solid black;
+    background-color:#ffffff;
+    border-collapse:collapse;
+    box-shadow: 5px 7px #888888;
+    width:26%;
+    height:63%;
+    margin-left:415px;
+    margin-top:50px;
+    border-radius: 10px;
+}
+#gmaps_popup
+{
+	border:4px solid black;
+    background-color:#ffffff;
+    border-collapse:collapse;
+    box-shadow: 5px 7px #888888;
+    width:26%;
+    height:63%;
+    margin-left:415px;
+    margin-top:50px;
+    border-radius: 10px;
+    display: none;
+}
+#a_star_popup
+{
+	border:4px solid black;
+    background-color:#ffffff;
+    border-collapse:collapse;
+    box-shadow: 5px 7px #888888;
+    width:26%;
+    height:63%;
+    margin-left:415px;
+    margin-top:50px;
+    border-radius: 10px;
+    display: none;
+}
+img
+{
+	width:50px;
+	height:54px;
+}
+#close1,#open1,#sub
+{
+    height:40px;
+    width:100px;
+    background-color:blue;
+    border-radius:5px;
+    color:white;
+    font-size:18;
+    border-color:blue;
+}
+#sub:hover,#close1:hover,#open1:hover
+{
+    background-color:darkblue;
+    border-color:darkblue;
+}
+#close1,#mob_popup
+{
+    display:none;
+}
+#type1
+{
+	width:250px;
+	height:21px;
+	border:0;
+	outline:0;
+	background:transparent;
+	border-bottom:2px dashed black;
+	font-size:14px;
+}
+#search
+{
+	background-color:#f4511e;
+	border-color: #f4511e;
+	color:white;
+	height:25px;
+	font-size:16;
+}
+#search:hover
+{
+	background-color: darkred;
+	border-color: darkred;
+}
+#back:hover
+{
+	background-color: darkorange;
+	border-color: darkorange;
+}
+#back
+{
+	background-color:#e6b800;
+	border-color: #e6b800;
+	height:25px;
+	color:white;
+}
+#back1:hover
+{
+	background-color: darkorange;
+	border-color: darkorange;
+}
+#back1
+{
+	background-color:#e6b800;
+	border-color: #e6b800;
+	height:25px;
+	color:white;
+}
+#a:hover
+{
+	background-color: darkgreen;
+	border-color: darkgreen;
+}
+#a
+{
+	background-color:green;
+	border-color: green;
+	height:25px;
+	color:white;
+}
+</style>
+<script>
+function open2()
+{
+    document.getElementById('open1').style.display='none';
+    document.getElementById('close1').style.display='block';
+    document.getElementById('mob_popup').style.display='block';
+}
+function close2()
+{
+    document.getElementById('open1').style.display='block';
+    document.getElementById('close1').style.display='none';
+    document.getElementById('mob_popup').style.display='none';
+}
+function gmaps()
+{
+	document.getElementById('mob_popup').style.display='none';
+	document.getElementById('gmaps_popup').style.display='block';
+	document.getElementById('close1').style.visibility='hidden';
+}
+function back()
+{
+	document.getElementById('mob_popup').style.display='block';
+	document.getElementById('gmaps_popup').style.display='none';
+	document.getElementById('close1').style.visibility='visible';
+}
+function a_star()
+{
+	document.getElementById('gmaps_popup').style.display='none';
+	document.getElementById('a_star_popup').style.display='block';
+	document.getElementById('i1').style.display='none';
+	document.getElementById('i2').style.display='block';
+}
+function back1()
+{
+	document.getElementById('gmaps_popup').style.display='block';
+	document.getElementById('a_star_popup').style.display='none';
+	document.getElementById('i1').style.display='block';
+	document.getElementById('i2').style.display='none';
+}
+</script>
+<body style='background-color: #eeeeee'>
+<img src='without weights.png' id='i1' style='margin-left:270px; height:50%; width:50%;'>
+<img src='weights graph.png' id='i2' style='margin-left:270px; height:50%; width:50%; display:none;'>
+<br><br><br>
+<center><button type='button' id='open1' onclick='open2()'>Mobile</button></center>
+<center><button type='button' id='close1' onclick='close2()'>Close</button></center>
+<br>
+<div id='mob_popup'>
+	<table align='center' cellpadding=20px>
+		<tr>
+			<td align='center'><img src='gmail.png' id='zoom'></td>
+			<td align='center'><img src='youtube.png' id='zoom'></td>
+			<td><img src='hangouts.jpg' id='zoom'></td>
+		</tr>
+		<tr>
+			<td><img src='teams1.jpg' style='width:65px; height:60px;' id='zoom'></td>
+			<td align='center'><img src='gmaps.png' style='width:55px; height:55px;' id='zoom' onclick='gmaps()'></td>
+			<td><img src='zoom.png' style='width:45px; height:45px;' id='zoom'></td>
+		</tr>
+		<tr>
+			<td align='center'><img src='whatsapp.png' style='width:47px; height:47px;' id='zoom'></td>
+			<td align='center'><img src='instagram.jpg' style='width:47px; height:47px;' id='zoom'></td>
+			<td align='left'><img src='play.jpg' style='width:45px; height:45px;' id='zoom'></td>
+		</tr>
+	</table>
+	<hr width=294px>
+</div>
+
+<div id='gmaps_popup'>
+<table align='center'>
+	<tr>
+		<td align='center'><img src='inside_gmaps.jpg' style='width:180px; height:140px'></td>
+	</tr>
+	<tr>
+		<td><br><input type='text' placeholder='enter your location' id='type1'></td>
+	</tr>
+	<tr>
+		<td><br><input type='text' placeholder='enter your destination' id='type1'></td>
+	</tr>
+	<tr>
+		<td align='center'><br><button type='button' id='search' onclick='a_star()'>Show Distances</button></td>
+	</tr>
+	<tr>
+		<td align='center'><br><button type='button' onclick='back()' id='back'>Back</button></td>
+	</tr>
+</table>
+</div>
+
+<div id='a_star_popup'>
+	<h2 align='center' style='color:green'>Confused ???</h3>
+	<h2 align='center' style='color:purple'>Which path to choose</h3>
+	<h2 align='center' style='color:red'>We will guide you</h3>
+	<h2 align='center' style='color:blue'>Try our A* search Algorithm</h3>
+	<center><button type='button'  onclick="location.href='a_star.php';" id='a'>Click Me</button>
+		<br><br><center><button type='button' onclick='back1()' id='back1'>Back</button></center><br>
+</div>
+<br><br>
+
+</body>
+</html>
